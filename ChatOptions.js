@@ -127,9 +127,6 @@ var chatOptions = {
 			enabled: isEnabled("multiKick"),
 			loaded: false,
 			load: function () {
-				if ((!wgUserGroups.indexOf("chatmoderator") && !wgUserGroups.indexOf("sysop") && !wgUserGroups.indexOf("staff") && !wgUserGroups.indexOf("helper") && !wgUserGroups.indexOf("vstf")) || $("multiKickerButton").length) {
-					return; // Do not load
-				}
 				importScriptPage("User:Madnessfan34537/multikick.js","cod");
 				$('<a id="multiKickerButton" class="wikia-button" href="javascript:showPopup()" style="position:absolute; right:55px; top:22px;">Multikick</a>').appendTo('.Write'); // to prevent issues with the button not loading
 				this.loaded = true;

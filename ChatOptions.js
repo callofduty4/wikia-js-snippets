@@ -209,18 +209,18 @@ function openOptions() {
 			id: "cancel",
 		    message: "Cancel",
 		    handler: function () {
-			    cancelChanges();
+				cancelChanges();
 		    }
 		},
-		    {
-			    id: "updateCookie",
-		    defaultButton: true,
-		    message: "Update!",
-	    	handler: function () {
-			    updateCookie();
+		{
+			id: "updateCookie",
+			defaultButton: true,
+			message: "Update!",
+			handler: function () {
+				updateCookie();
+		    }
 	    }
-	    }
-	]
+		]
 	});
 	$(".close").click(cancelChanges);
 	// Check if various modules have been enabled by the user, and check their boxes if so
@@ -252,15 +252,14 @@ function openOptions() {
 		$("#ignoreURL").attr("disabled",true);
 		
 	$("select option[value='" + chatOptions.look.fontFamily + "']").attr("selected","selected"); // sets the font selector to the one chosen currently
-	$('body').append('<div style="height: 100%; width: 100%; z-index: 2000000001; opacity: 0.65; display: block;" data-opacity="0.65" class="blackout"></div>');
 }
 
 /**
  * Close the options window without saving any changes
  */
 function cancelChanges() {
-	$('#optionsWindow').remove();
-	$('.blackout').remove();
+	var dialog = $('#optionsWindow');
+	dialog.closeModal();
 }
  
 /**
